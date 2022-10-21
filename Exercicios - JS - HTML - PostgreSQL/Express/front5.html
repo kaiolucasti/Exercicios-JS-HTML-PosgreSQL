@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Aula11: Front-End</title>
+    <script src="jquery-3.6.0.min.js" defer></script>
+    
+</head>
+
+<body>
+    <p>Digite uma temperatura em fahrenheit e veja a conversão</p>
+    <input id="input" type="number" >
+    </br>
+    </br>
+    <button onclick="btn1()">Clique</button>
+    <p>Fahrenheit:<span id="fah"> </span></p>
+    <p>Celsius: <span id="cel"></span></p>
+    <p>Kelvin: <span id="kel"></span></p>
+</body>
+<script defer>
+    function btn1(){
+    let x = $('#input[type=number]').val();
+    $.ajax({
+        type: 'GET',
+        url:'http://localhost:3000/converte/' + x,
+        success: function(dados){
+            $('#fah').text(dados.fahrenheit)
+            $('#cel').text(dados.celsius)
+            $('#kel').text(dados.kelvin)
+        },
+        error: function(dados){
+            $('#aqui').text('página não encontrada')
+        }
+    })
+}
+
+</script>
+
+
+</html>

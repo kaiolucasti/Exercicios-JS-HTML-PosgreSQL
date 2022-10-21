@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-3.6.0.min.js" defer></script>
+    
+    
+</head>
+
+<body>
+    <p>Digite os dados do filme</p>
+    
+    <p>Diretor: <span id="diretor"></span></p>
+    <input type="text" id= "diretor" name="diretor">
+
+    <p>Titulo:<span id ="titulo"></span></p>
+    <input type="text" id="titulo" name="titulo">
+
+    <p>Idioma: <span id="idioma"></span></p>
+    <input type="text" id="idioma" name="idioma">
+
+    <button onclick="btn1()">Clique</button>
+</body>
+<script>
+    function btn1(){
+        let diretor = $("#diretor[type=text]").val()
+        let titulo = $("#titulo[type=text]").val()
+        let idioma = $("#idioma[type=text]").val()
+        $.ajax({
+        type: 'POST',
+        url:'http://localhost:3000/filmes',
+        data: JSON.stringify(
+            
+            {   
+                diretor: diretor,
+                titulo: titulo,
+                idioma: idioma
+            }
+        ),
+        contentType: 'application/json',
+
+        success: function(dados){
+            $('#diretor').text(dados.diretor)
+            $('#titulo').text(dados.titulo)
+            $('#idioma').text(dados.idioma)
+        },
+        error: function(dados){
+            $('#aqui').text('página não encontrada')
+        }
+    })
+}
+
+</script>

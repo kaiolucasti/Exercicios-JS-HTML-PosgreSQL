@@ -1,0 +1,10 @@
+{
+  "name": "lista",
+  "version": "1.0.0",
+  "description": "Desenvolvimento de Sistemas Web ",
+  "dependencies": {
+      "to-capital-case": "^1.0.0",
+      "to-constant-case": "^1.0.0",
+      "to-space-case": "^1.0.0"
+  }
+}

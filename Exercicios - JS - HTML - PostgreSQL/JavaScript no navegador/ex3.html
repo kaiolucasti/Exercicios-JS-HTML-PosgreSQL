@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html lang "pt-br">
+        
+<head>
+    <meta charset="UTF-8">
+    <title>
+        Aula: JavaScript no navegador
+    </title>
+</head>
+
+<body>
+    <h1 >Minha página</h1>
+    
+    <button onclick= "teste()">Clique aqui</button>
+    
+    <p id="texto">Melhor que nada.</p>
+    <p>Seja Bem-Vindo</p>
+    <p>Conheca nossos produtos</p>
+    <p>Fique avontade para ver tudo</p>
+    
+    <div id = "conteudo">
+        <button onclick= "teste2()">Aperte para adicionar uma frase</button>  
+    </div>
+    
+
+</body>
+
+<script>
+    function teste(){
+        document.querySelector("#texto").innerText ='Ficou top kk';
+    }
+    function teste2(){
+    
+
+    let frase =["Nada é para sempre.",
+    "A fé move montanhas.",
+    "O futuro á Deus pertence.",
+    "Deus é o caminho."
+    ];
+    
+    let novo = document.createElement("p");
+        novo.innerText = frase[contador];
+        
+    let cont = document.querySelector('#conteudo');
+        cont.appendChild(novo); 
+        contador++;
+
+    }let contador = 0;
+    
+
+</script>
+</html>

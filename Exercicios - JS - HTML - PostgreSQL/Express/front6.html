@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Aula11: Front-End</title>
+    <script src="jquery-3.6.0.min.js" defer></script>
+    
+</head>
+
+<body>
+    <button onclick="btn1()">Clique</button>
+    <p>area: <span id = "ar"></span></p>
+    <p>perimetro: <span id = "per"></span></p>
+    
+</body>
+<script >
+    function btn1(){
+        
+    $.ajax({
+        type: 'POST',
+        url:'http://localhost:3000/quadrado',
+        data: JSON.stringify(
+            
+            {
+                lado:50
+                
+            }
+        ),
+        contentType: 'application/json',
+        
+        success: function(dados){
+            $('#ar').text(dados.area)
+            $('#per').text(dados.perimetro)
+            
+        },
+        error: function(dados){
+            $('#aqui').text('página não encontrada')
+        }
+    })
+}
+
+</script>
+
+
+</html>

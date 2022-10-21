@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang "pt-br">
+        
+<head>
+    <meta charset="UTF-8">
+    <title>
+        Aula: JavaScript no navegador
+    </title>
+    <style>
+        .contPers{
+            background-color: blueviolet;
+            color:cornsilk;
+            width: 75px;
+            height: 50px;
+            padding: 20px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1 >Minha página</h1>
+    
+    <button onclick= "teste()">Clique aqui</button>
+    
+    <p id="texto">Melhor que nada.</p>
+    <p>Seja Bem-Vindo</p>
+    <p>Conheca nossos produtos</p>
+    
+    <div onmouseover="mouseOver()" onmouseout="mouseOut()" class = "contPers"
+    id="mousePassar">Passe o Mouse</div>
+    
+
+</body>
+
+<script>
+    function teste(){
+        document.querySelector("#texto").innerText ='Ficou top kk';
+    } 
+    function mouseOver(){
+        document.querySelector("#mousePassar").innerText = 'Retire o Mouse';
+    }
+    function mouseOut(){
+        document.querySelector("#mousePassar").innerText = 'Passe o Mouse';
+    }
+
+</script>
+</html>

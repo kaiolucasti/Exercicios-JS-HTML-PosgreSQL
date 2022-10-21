@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang "pt-br">
+        
+<head>
+    <meta charset="UTF-8">
+    <title>
+        Aula: JavaScript no navegador
+    </title>
+</head>
+
+<body>
+    <h1>Minha página</h1>
+    <input type="text" id= "meucampo" onkeydown = "key()">
+    <h1 id="textoA"></h1>
+    
+
+</body>
+
+<script>
+    
+    function key(){
+        let a1 = document.querySelector("#textoA");
+
+        let novo = document.createElement("h1");
+        a1.innerHTML = document.querySelector("#meucampo").value
+        
+
+    }
+
+</script>
+</html>

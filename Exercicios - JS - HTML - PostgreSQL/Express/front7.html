@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Aula11: Front-End</title>
+    <script src="jquery-3.6.0.min.js" defer></script>
+    
+</head>
+
+<body>
+    
+    <p>Digite o tamanho do lado do quadrado e veja o calculo</p>
+    <input id="input" type="number" >
+    </br>
+    </br>
+    <button onclick="btn1()">Clique</button>
+    <p>area: <span id = "ar"></span></p>
+    <p>perimetro: <span id = "per"></span></p>
+    
+</body>
+<script defer>
+    function btn1(){
+         let x = $('#input[type=number]').val()
+     
+    $.ajax({
+        type: 'POST',
+        url:'http://localhost:3000/quadrado',
+        data: JSON.stringify( 
+            {
+                lado: x
+                
+            }
+        ),
+        contentType: 'application/json',
+        
+        success: function(dados){
+            $('#ar').text(dados.area)
+            $('#per').text(dados.perimetro)
+              
+        },
+        error: function(dados){
+            $('#aqui').text('página não encontrada')
+        }
+    })
+}
+
+</script>
+
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    
+    <script src="jquery-3.6.0.min.js" defer></script>
+    
+</head>
+
+<body>
+    <p>Digite o número do filme:</p>
+    <input id="input" type="number" >
+    </br>
+    </br>
+    <button onclick="btn1()">Clique</button>
+    <p>Titulo:<span id="til"> </span></p>
+    <p>Diretor: <span id="dir"></span></p>
+    <p>Idioma: <span id="idi"></span></p>
+</body>
+<script defer>
+    function btn1(){
+    let x = $('#input[type=number]').val();
+    $.ajax({
+        type: 'GET',
+        url:'http://localhost:3000/filmes/'+x,
+        success: function(dados){
+            $('#til').text(dados.titulo)
+            $('#dir').text(dados.diretor)
+            $('#idi').text(dados.idioma)
+        },
+        error: function(dados){
+            $('#aqui').text('página não encontrada')
+        }
+    })
+}
+
+</script>

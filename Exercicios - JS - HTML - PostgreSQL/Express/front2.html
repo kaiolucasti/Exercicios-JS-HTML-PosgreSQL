@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Aula11: Front-End</title>
+    <script src="jquery-3.6.0.min.js" defer></script>
+    
+</head>
+
+<body>
+    <h1>Aprendendo Front-End</h1>
+    <p>Buscando informações do Servidor: </p>
+    <div id="aqui">(...)</div>
+    <div id="aqui2">(...)</div>
+    <button onclick="vai()">Vai!</button>
+    <button onclick="vai2()">Vai de novo!</button>
+       
+
+</body>
+<script>
+    function vai(){
+        $.ajax({
+            type: 'GET',
+            url:'http://localhost:3000/',
+            success: function(dados){
+                $('#aqui').text(dados);
+            }
+        })
+    }
+    function vai2(){
+        $.ajax({
+            type:'GET',
+            url:'http://localhost:3000/kaiolucas',
+            success: function(dados){
+                $('#aqui2').text(dados);
+            }
+
+        
+        })
+    }
+</script>
+
+
+</html>

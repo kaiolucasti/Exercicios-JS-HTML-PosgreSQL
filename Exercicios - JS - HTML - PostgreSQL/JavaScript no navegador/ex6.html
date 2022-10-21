@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html lang "pt-br">
+        
+<head>
+    <meta charset="UTF-8">
+    <title>
+        Aula: JavaScript no navegador
+    </title>
+</head>
+
+<body>
+    <h1 >Minha página</h1>
+    <button onclick="campo()">Click aqui</button>
+    
+    <input type="radio" name = "z" id="valor1">
+    <input type="radio" name = "z" id="valor2">
+    <input type="radio" name = "z" id="valor3">
+
+    <input type="checkbox" name = "y" id="valorA">
+    <input type="checkbox" name = "y" id="valorB">
+    <input type="checkbox" name = "y" id="valorC">
+
+
+    
+
+</body>
+
+<script>
+    
+    function campo(){
+       let v1 = document.querySelector('#valor1');
+       let v2 = document.querySelector('#valor2');
+       let v3 = document.querySelector('#valor3');
+    
+       //radio
+       if(v1.checked){
+           console.log("A primeira está selecionada.");
+       }
+       if(v2.checked){
+           console.log("A segunda está selecionada.");
+       }
+       if(v3.checked){
+           console.log("A terceira está selecionada.");
+       }
+       
+       //checkbox
+       let va = document.querySelector('#valorA');
+       let vb = document.querySelector('#valorB');
+       let vc = document.querySelector('#valorC');
+
+       if(va.checked){
+           console.log("A primeira checkbox está selecionada.");
+       }
+       if(vb.checked){
+           console.log("A segunda checkbox está selecionada.");
+       }
+       if(vc.checked){
+           console.log("A terceira checkbox está selecionada.");
+       }
+    }
+
+</script>
+</html>
